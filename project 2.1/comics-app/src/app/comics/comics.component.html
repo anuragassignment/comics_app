@@ -1,0 +1,19 @@
+<section class="container">
+  <div class="page-header">
+    <h1>Comics</h1>
+  </div>
+  <div class="row">
+    <ul>
+      <li class="col-md-4" *ngFor="let comics of comicsList">
+        <a [routerLink]="['/comics/', comics.id]">
+          <div class="thumbnail pull-left clearfix">
+            <img class="img-responsive" [src]="comics.thumbnail.path + '/portrait_xlarge.jpg'" alt="">
+            <div class="caption">
+              <h3>{{comics.title}}</h3>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

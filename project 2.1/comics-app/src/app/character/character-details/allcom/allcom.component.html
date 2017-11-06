@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="page-header">
+    <h1>All Comics</h1>
+  </div>
+  <div *ngIf="allcm? allcm.length<1 : ![]">
+    <h2 class="text-center">!No Data Available</h2>
+  </div>
+  <div class="row">
+    <ul>
+      <li class="col-md-4" *ngFor="let cm of allcm">
+        <div class="thumbnail pull-left clearfix">
+          <img class="img-responsive" [src]="cm.thumbnail.path + '/portrait_xlarge.jpg'" [alt]="cm.title">
+          <div class="caption">
+            <h3>{{cm.title}}</h3>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

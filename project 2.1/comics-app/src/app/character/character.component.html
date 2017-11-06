@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="page-header">
+    <h1>Characters</h1>
+  </div>
+  <div class="row">
+    <ul>
+      <li class="col-md-4" *ngFor="let char of charList">
+        <a [routerLink]="['/characters/', char.id]">
+          <div class="thumbnail pull-left clearfix">
+            <img class="img-responsive" [src]="char.thumbnail.path + '/portrait_xlarge.jpg'" [alt]="char.name">
+            <div class="caption">
+              <h3>{{char.name}}</h3>
+              <p>{{char.description}}</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+a {
+  cursor: pointer;
+}
+
+h4 div {
+  text-align: center;
+}
+
+p>i {
+  color: green;
+}

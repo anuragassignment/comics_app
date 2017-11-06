@@ -1,0 +1,27 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/']">ComicsWorld</a>
+    </div>
+
+    <!-- navbar create Hyperlinks for Characters and Comics. It highlight the navbar as per the routes. -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/characters']">Characters</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/comics']">Comics</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a *ngIf="!auth.isAuthenticated()" (click)="auth.login()"><i class="glyphicon glyphicon-user"></i> Sign Up</a></li>
+        <li><a *ngIf="!auth.isAuthenticated()" (click)="auth.login()"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+        <li><a *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><i class="glyphicon glyphicon-log-out"></i> LogOut</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

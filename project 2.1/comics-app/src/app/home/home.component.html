@@ -1,0 +1,11 @@
+<h4 *ngIf="auth.isAuthenticated()">
+  <div class="jumbotron">
+    <h1>Welcome to Comics App</h1>   
+  </div>
+</h4>
+<h4 *ngIf="!auth.isAuthenticated()">
+    <div class="jumbotron">
+        <h1>Welcome to Comics App</h1>
+        <p>You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.</p>
+      </div>
+</h4>
